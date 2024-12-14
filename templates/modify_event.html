@@ -1,4 +1,44 @@
 <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    {% extends "add_event.html" %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Event</title>
+</head>
+<body>
+    {% block adminoperations %}
+
+    <!-- Table for Existing events -->
+    <!-- To be fetched from the database -->
+
+    <h1>Modify Event</h1>
+    <form action="/modifying_event" method="POST" enctype="multipart/form-data">
+        <label for="event_id">Event ID:</label>
+        <input type="text" name="event_id" required><br><br>
+
+        <label for="event_name">Event Name:</label>
+        <select name="event_name" required>
+            <option value="" disabled selected>Select an event</option>
+            {% for event in events %}
+                <option value="{{ event }}">{{ event }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="event_date">Event Date:</label>
+        <input type="date" name="event_date" required><br><br>
+
+        <label for="description">Description:</label>
+        <textarea name="description" rows="4" cols="50"></textarea><br><br>
+
+        <label for="event_img">Event Image:</label>
+        <input type="file" name="event_img"><br><br>
+
+        <input type="submit" value="Modify Event">
+    </form>
+    {% endblock %}
+=======
 <!-- <html lang="en">
 <head>
     <meta charset="UTF-8">

@@ -11,6 +11,7 @@ header {
     /* width: 100%; */
     display: flex;
     justify-content: space-between;
+    height: 75px;
     align-items: center;
     padding: 20px 10%;
     background-color: #333; /* Dark background for the header */
